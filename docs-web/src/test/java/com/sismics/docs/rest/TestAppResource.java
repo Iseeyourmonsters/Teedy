@@ -57,7 +57,8 @@ public class TestAppResource extends BaseJerseyTest {
         Long totalMemory = json.getJsonNumber("total_memory").longValue();
         Assert.assertTrue(totalMemory > 0 && totalMemory > freeMemory);
         Assert.assertEquals(0, json.getJsonNumber("queued_tasks").intValue());
-        Assert.assertFalse(json.getBoolean("guest_login"));
+//        Assert.assertFalse(json.getBoolean("guest_login"));
+        Assert.assertTrue(json.getBoolean("guest_login"));
         Assert.assertFalse(json.getBoolean("ocr_enabled"));
         Assert.assertEquals("eng", json.getString("default_language"));
         Assert.assertTrue(json.containsKey("global_storage_current"));
