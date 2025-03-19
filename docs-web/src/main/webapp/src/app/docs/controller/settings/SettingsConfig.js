@@ -7,6 +7,8 @@ angular.module('docs').controller('SettingsConfig', function($scope, $rootScope,
   // Get the app configuration
   Restangular.one('app').get().then(function (data) {
     $rootScope.app = data;
+    $rootScope.app.guest_login = true; // 初始化为开启
+    $scope.app.guest_login = true; // 初始化为开启
     $scope.general = {
       default_language: data.default_language
     }
