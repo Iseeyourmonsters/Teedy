@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/AclTargetType.java"
+         totalNumberOfTokens="10"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/AclType.java"
+         totalNumberOfTokens="8"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/ActionType.java"
+         totalNumberOfTokens="10"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/AuditLogType.java"
+         totalNumberOfTokens="10"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/ConfigType.java"
+         totalNumberOfTokens="64"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/Constants.java"
+         totalNumberOfTokens="221"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/MetadataType.java"
+         totalNumberOfTokens="14"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/PermType.java"
+         totalNumberOfTokens="8"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/RouteStepTransition.java"
+         totalNumberOfTokens="10"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/RouteStepType.java"
+         totalNumberOfTokens="8"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/constant/WebhookEvent.java"
+         totalNumberOfTokens="16"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/AclDao.java"
+         totalNumberOfTokens="783"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/AuditLogDao.java"
+         totalNumberOfTokens="421"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/AuthenticationTokenDao.java"
+         totalNumberOfTokens="434"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/CommentDao.java"
+         totalNumberOfTokens="407"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/ConfigDao.java"
+         totalNumberOfTokens="131"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/ContributorDao.java"
+         totalNumberOfTokens="254"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/DocumentDao.java"
+         totalNumberOfTokens="1198"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/DocumentMetadataDao.java"
+         totalNumberOfTokens="311"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/FileDao.java"
+         totalNumberOfTokens="1008"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/GroupDao.java"
+         totalNumberOfTokens="1078"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/MetadataDao.java"
+         totalNumberOfTokens="495"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/PasswordRecoveryDao.java"
+         totalNumberOfTokens="236"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/RelationDao.java"
+         totalNumberOfTokens="376"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/RoleBaseFunctionDao.java"
+         totalNumberOfTokens="89"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/RouteDao.java"
+         totalNumberOfTokens="426"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/RouteModelDao.java"
+         totalNumberOfTokens="609"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/RouteStepDao.java"
+         totalNumberOfTokens="742"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/ShareDao.java"
+         totalNumberOfTokens="152"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/TagDao.java"
+         totalNumberOfTokens="905"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/UserDao.java"
+         totalNumberOfTokens="1724"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/VocabularyDao.java"
+         totalNumberOfTokens="288"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/WebhookDao.java"
+         totalNumberOfTokens="438"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/AuditLogCriteria.java"
+         totalNumberOfTokens="85"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/DocumentCriteria.java"
+         totalNumberOfTokens="413"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/GroupCriteria.java"
+         totalNumberOfTokens="91"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/MetadataCriteria.java"
+         totalNumberOfTokens="5"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/RouteCriteria.java"
+         totalNumberOfTokens="33"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/RouteModelCriteria.java"
+         totalNumberOfTokens="42"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/RouteStepCriteria.java"
+         totalNumberOfTokens="89"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/TagCriteria.java"
+         totalNumberOfTokens="98"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/UserCriteria.java"
+         totalNumberOfTokens="117"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/criteria/WebhookCriteria.java"
+         totalNumberOfTokens="33"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/AclDto.java"
+         totalNumberOfTokens="161"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/AuditLogDto.java"
+         totalNumberOfTokens="187"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/CommentDto.java"
+         totalNumberOfTokens="135"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/ContributorDto.java"
+         totalNumberOfTokens="57"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/DocumentDto.java"
+         totalNumberOfTokens="557"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/DocumentMetadataDto.java"
+         totalNumberOfTokens="173"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/GroupDto.java"
+         totalNumberOfTokens="187"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/MetadataDto.java"
+         totalNumberOfTokens="89"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/RelationDto.java"
+         totalNumberOfTokens="83"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/RouteDto.java"
+         totalNumberOfTokens="89"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/RouteModelDto.java"
+         totalNumberOfTokens="89"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/RouteStepDto.java"
+         totalNumberOfTokens="475"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/TagDto.java"
+         totalNumberOfTokens="145"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/UserDto.java"
+         totalNumberOfTokens="256"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/WebhookDto.java"
+         totalNumberOfTokens="159"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/AclCreatedAsyncEvent.java"
+         totalNumberOfTokens="7"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/AclDeletedAsyncEvent.java"
+         totalNumberOfTokens="7"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/AclEvent.java"
+         totalNumberOfTokens="133"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/DocumentCreatedAsyncEvent.java"
+         totalNumberOfTokens="60"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/DocumentDeletedAsyncEvent.java"
+         totalNumberOfTokens="60"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/DocumentUpdatedAsyncEvent.java"
+         totalNumberOfTokens="60"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/FileCreatedAsyncEvent.java"
+         totalNumberOfTokens="7"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/FileDeletedAsyncEvent.java"
+         totalNumberOfTokens="93"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/FileEvent.java"
+         totalNumberOfTokens="122"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/FileUpdatedAsyncEvent.java"
+         totalNumberOfTokens="7"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/PasswordLostEvent.java"
+         totalNumberOfTokens="91"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/RebuildIndexAsyncEvent.java"
+         totalNumberOfTokens="25"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/RouteStepValidateEvent.java"
+         totalNumberOfTokens="93"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/event/UserEvent.java"
+         totalNumberOfTokens="32"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/AclCreatedAsyncListener.java"
+         totalNumberOfTokens="93"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/AclDeletedAsyncListener.java"
+         totalNumberOfTokens="93"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/DocumentCreatedAsyncListener.java"
+         totalNumberOfTokens="144"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/DocumentDeletedAsyncListener.java"
+         totalNumberOfTokens="83"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/DocumentUpdatedAsyncListener.java"
+         totalNumberOfTokens="258"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/FileDeletedAsyncListener.java"
+         totalNumberOfTokens="200"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/FileProcessingAsyncListener.java"
+         totalNumberOfTokens="677"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/PasswordLostAsyncListener.java"
+         totalNumberOfTokens="133"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/RebuildIndexAsyncListener.java"
+         totalNumberOfTokens="216"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/RouteStepValidateAsyncListener.java"
+         totalNumberOfTokens="144"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/listener/async/WebhookAsyncListener.java"
+         totalNumberOfTokens="384"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/context/AppContext.java"
+         totalNumberOfTokens="758"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Acl.java"
+         totalNumberOfTokens="340"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/AuditLog.java"
+         totalNumberOfTokens="346"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/AuthenticationToken.java"
+         totalNumberOfTokens="352"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/BaseFunction.java"
+         totalNumberOfTokens="80"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Comment.java"
+         totalNumberOfTokens="298"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Config.java"
+         totalNumberOfTokens="124"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Contributor.java"
+         totalNumberOfTokens="176"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Document.java"
+         totalNumberOfTokens="697"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/DocumentMetadata.java"
+         totalNumberOfTokens="226"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/DocumentTag.java"
+         totalNumberOfTokens="218"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/File.java"
+         totalNumberOfTokens="630"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Group.java"
+         totalNumberOfTokens="278"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Loggable.java"
+         totalNumberOfTokens="13"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Metadata.java"
+         totalNumberOfTokens="237"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/PasswordRecovery.java"
+         totalNumberOfTokens="191"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Relation.java"
+         totalNumberOfTokens="209"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Role.java"
+         totalNumberOfTokens="198"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/RoleBaseFunction.java"
+         totalNumberOfTokens="246"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Route.java"
+         totalNumberOfTokens="276"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/RouteModel.java"
+         totalNumberOfTokens="262"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/RouteStep.java"
+         totalNumberOfTokens="635"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Share.java"
+         totalNumberOfTokens="187"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Tag.java"
+         totalNumberOfTokens="339"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/User.java"
+         totalNumberOfTokens="591"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/UserGroup.java"
+         totalNumberOfTokens="218"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Vocabulary.java"
+         totalNumberOfTokens="220"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Webhook.java"
+         totalNumberOfTokens="282"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/service/FileService.java"
+         totalNumberOfTokens="280"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/service/FileSizeService.java"
+         totalNumberOfTokens="257"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/service/InboxService.java"
+         totalNumberOfTokens="1353"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/ActionUtil.java"
+         totalNumberOfTokens="141"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/AuditLogUtil.java"
+         totalNumberOfTokens="126"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/ConfigUtil.java"
+         totalNumberOfTokens="170"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/DirectoryUtil.java"
+         totalNumberOfTokens="304"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/DocumentUtil.java"
+         totalNumberOfTokens="130"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/EncryptionUtil.java"
+         totalNumberOfTokens="302"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/FileUtil.java"
+         totalNumberOfTokens="1099"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/MetadataUtil.java"
+         totalNumberOfTokens="846"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/PdfUtil.java"
+         totalNumberOfTokens="668"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/RoutingUtil.java"
+         totalNumberOfTokens="459"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/SecurityUtil.java"
+         totalNumberOfTokens="119"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/TransactionUtil.java"
+         totalNumberOfTokens="318"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/action/Action.java"
+         totalNumberOfTokens="22"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/action/AddTagAction.java"
+         totalNumberOfTokens="158"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/action/ProcessFilesAction.java"
+         totalNumberOfTokens="209"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/action/RemoveTagAction.java"
+         totalNumberOfTokens="125"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/action/TagAction.java"
+         totalNumberOfTokens="93"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/authentication/AuthenticationHandler.java"
+         totalNumberOfTokens="14"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/authentication/AuthenticationUtil.java"
+         totalNumberOfTokens="127"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/authentication/InternalAuthenticationHandler.java"
+         totalNumberOfTokens="44"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/authentication/LdapAuthenticationHandler.java"
+         totalNumberOfTokens="456"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/DocxFormatHandler.java"
+         totalNumberOfTokens="226"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/FormatHandler.java"
+         totalNumberOfTokens="53"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/FormatHandlerUtil.java"
+         totalNumberOfTokens="103"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/ImageFormatHandler.java"
+         totalNumberOfTokens="470"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/OdtFormatHandler.java"
+         totalNumberOfTokens="227"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/PdfFormatHandler.java"
+         totalNumberOfTokens="387"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/PptxFormatHandler.java"
+         totalNumberOfTokens="400"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/TextPlainFormatHandler.java"
+         totalNumberOfTokens="219"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/VideoFormatHandler.java"
+         totalNumberOfTokens="336"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/indexing/IndexingHandler.java"
+         totalNumberOfTokens="118"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/indexing/LuceneIndexingHandler.java"
+         totalNumberOfTokens="3343"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/jpa/PaginatedList.java"
+         totalNumberOfTokens="114"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/jpa/PaginatedLists.java"
+         totalNumberOfTokens="308"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/jpa/QueryParam.java"
+         totalNumberOfTokens="65"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/jpa/QueryUtil.java"
+         totalNumberOfTokens="159"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/jpa/SortCriteria.java"
+         totalNumberOfTokens="68"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/pdf/PdfPage.java"
+         totalNumberOfTokens="627"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/ClasspathScanner.java"
+         totalNumberOfTokens="262"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/EmailUtil.java"
+         totalNumberOfTokens="1202"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/EnvironmentUtil.java"
+         totalNumberOfTokens="208"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/HtmlToPlainText.java"
+         totalNumberOfTokens="445"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/HttpUtil.java"
+         totalNumberOfTokens="46"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/ImageDeskew.java"
+         totalNumberOfTokens="822"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/ImageUtil.java"
+         totalNumberOfTokens="487"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/JsonUtil.java"
+         totalNumberOfTokens="137"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/LocaleUtil.java"
+         totalNumberOfTokens="98"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/MessageUtil.java"
+         totalNumberOfTokens="88"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/ResourceBundleModel.java"
+         totalNumberOfTokens="186"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/ResourceUtil.java"
+         totalNumberOfTokens="405"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/Scalr.java"
+         totalNumberOfTokens="187"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/context/ThreadLocalContext.java"
+         totalNumberOfTokens="210"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/css/Rule.java"
+         totalNumberOfTokens="53"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/css/Selector.java"
+         totalNumberOfTokens="123"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/io/InputStreamReaderThread.java"
+         totalNumberOfTokens="170"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/jpa/DbOpenHelper.java"
+         totalNumberOfTokens="733"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/jpa/DialectUtil.java"
+         totalNumberOfTokens="213"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/jpa/EMF.java"
+         totalNumberOfTokens="549"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/log4j/LogCriteria.java"
+         totalNumberOfTokens="99"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/log4j/LogEntry.java"
+         totalNumberOfTokens="90"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/log4j/MemoryAppender.java"
+         totalNumberOfTokens="481"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/mime/MimeType.java"
+         totalNumberOfTokens="103"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/mime/MimeTypeUtil.java"
+         totalNumberOfTokens="164"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/GoogleAuthenticator.java"
+         totalNumberOfTokens="1000"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/GoogleAuthenticatorConfig.java"
+         totalNumberOfTokens="280"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/GoogleAuthenticatorException.java"
+         totalNumberOfTokens="43"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/GoogleAuthenticatorKey.java"
+         totalNumberOfTokens="84"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/KeyRepresentation.java"
+         totalNumberOfTokens="8"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/totp/ReseedingSecureRandom.java"
+         totalNumberOfTokens="328"/>
+   <file path="/mnt/c/github/Teedy/docs-core/src/main/java/org/apache/pdfbox/pdmodel/font/DocsPDType1Font.java"
+         totalNumberOfTokens="1358"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/exception/ClientException.java"
+         totalNumberOfTokens="115"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/exception/ForbiddenClientException.java"
+         totalNumberOfTokens="62"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/exception/ServerException.java"
+         totalNumberOfTokens="113"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/util/AclUtil.java"
+         totalNumberOfTokens="153"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/util/RestUtil.java"
+         totalNumberOfTokens="191"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/util/ValidationUtil.java"
+         totalNumberOfTokens="797"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/security/AnonymousPrincipal.java"
+         totalNumberOfTokens="121"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/security/IPrincipal.java"
+         totalNumberOfTokens="38"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/security/UserPrincipal.java"
+         totalNumberOfTokens="241"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/CorsFilter.java"
+         totalNumberOfTokens="162"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/HeaderBasedSecurityFilter.java"
+         totalNumberOfTokens="105"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/JwtBasedSecurityFilter.java"
+         totalNumberOfTokens="742"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/RequestContextFilter.java"
+         totalNumberOfTokens="598"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/SecurityFilter.java"
+         totalNumberOfTokens="410"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/TokenBasedSecurityFilter.java"
+         totalNumberOfTokens="333"/>
+   <file path="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/listener/IIOProviderContextListener.java"
+         totalNumberOfTokens="267"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/constant/BaseFunction.java"
+         totalNumberOfTokens="6"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/AclResource.java"
+         totalNumberOfTokens="1003"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/AppResource.java"
+         totalNumberOfTokens="3831"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/AuditLogResource.java"
+         totalNumberOfTokens="329"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/BaseResource.java"
+         totalNumberOfTokens="227"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/CommentResource.java"
+         totalNumberOfTokens="618"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/DocsMessageBodyWriter.java"
+         totalNumberOfTokens="105"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/DocumentResource.java"
+         totalNumberOfTokens="4566"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/FileResource.java"
+         totalNumberOfTokens="2999"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/GroupResource.java"
+         totalNumberOfTokens="1593"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/MetadataResource.java"
+         totalNumberOfTokens="658"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/RouteModelResource.java"
+         totalNumberOfTokens="1581"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/RouteResource.java"
+         totalNumberOfTokens="1469"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/ShareResource.java"
+         totalNumberOfTokens="523"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/TagResource.java"
+         totalNumberOfTokens="1259"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/ThemeResource.java"
+         totalNumberOfTokens="890"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/UserResource.java"
+         totalNumberOfTokens="4246"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/VocabularyResource.java"
+         totalNumberOfTokens="780"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/WebhookResource.java"
+         totalNumberOfTokens="439"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/util/DocumentSearchCriteriaUtil.java"
+         totalNumberOfTokens="1611"/>
+   <file path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/util/TagUtil.java"
+         totalNumberOfTokens="173"/>
+   <duplication lines="34" tokens="346">
+      <file begintoken="67104"
+            column="13"
+            endcolumn="13"
+            endline="694"
+            endtoken="67449"
+            line="661"
+            path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/DocumentResource.java"/>
+      <file begintoken="67751"
+            column="13"
+            endcolumn="13"
+            endline="816"
+            endtoken="68096"
+            line="783"
+            path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/DocumentResource.java"/>
+      <codefragment><![CDATA[            @FormParam("title") String title,
+            @FormParam("description") String description,
+            @FormParam("subject") String subject,
+            @FormParam("identifier") String identifier,
+            @FormParam("publisher") String publisher,
+            @FormParam("format") String format,
+            @FormParam("source") String source,
+            @FormParam("type") String type,
+            @FormParam("coverage") String coverage,
+            @FormParam("rights") String rights,
+            @FormParam("tags") List<String> tagList,
+            @FormParam("relations") List<String> relationList,
+            @FormParam("metadata_id") List<String> metadataIdList,
+            @FormParam("metadata_value") List<String> metadataValueList,
+            @FormParam("language") String language,
+            @FormParam("create_date") String createDateStr) {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        // Validate input data
+        title = ValidationUtil.validateLength(title, "title", 1, 100, false);
+        language = ValidationUtil.validateLength(language, "language", 3, 7, false);
+        description = ValidationUtil.validateLength(description, "description", 0, 4000, true);
+        subject = ValidationUtil.validateLength(subject, "subject", 0, 500, true);
+        identifier = ValidationUtil.validateLength(identifier, "identifier", 0, 500, true);
+        publisher = ValidationUtil.validateLength(publisher, "publisher", 0, 500, true);
+        format = ValidationUtil.validateLength(format, "format", 0, 500, true);
+        source = ValidationUtil.validateLength(source, "source", 0, 500, true);
+        type = ValidationUtil.validateLength(type, "type", 0, 100, true);
+        coverage = ValidationUtil.validateLength(coverage, "coverage", 0, 100, true);
+        rights = ValidationUtil.validateLength(rights, "rights", 0, 100, true);
+        Date createDate = ValidationUtil.validateDate(createDateStr, "create_date", true);
+        if (!Constants.SUPPORTED_LANGUAGES.contains(language)) {
+]]></codefragment>
+   </duplication>
+   <duplication lines="86" tokens="245">
+      <file begintoken="14578"
+            column="24"
+            endcolumn="11"
+            endline="211"
+            endtoken="14822"
+            line="126"
+            path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/dto/DocumentDto.java"/>
+      <file begintoken="22862"
+            column="21"
+            endcolumn="11"
+            endline="235"
+            endtoken="23106"
+            line="150"
+            path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Document.java"/>
+      <codefragment><![CDATA[    public DocumentDto setFileId(String fileId) {
+        this.fileId = fileId;
+        return this;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+    
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCoverage() {
+        return coverage;
+    }
+
+    public void setCoverage(String coverage) {
+        this.coverage = coverage;
+    }
+
+    public String getRights() {
+        return rights;
+    }
+
+    public void setRights(String rights) {
+        this.rights = rights;
+    }
+
+    public Long getCreateTimestamp() {
+]]></codefragment>
+   </duplication>
+   <duplication lines="33" tokens="167">
+      <file begintoken="36559"
+            column="40"
+            endcolumn="88"
+            endline="63"
+            endtoken="36725"
+            line="31"
+            path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/DocxFormatHandler.java"/>
+      <file begintoken="37415"
+            column="43"
+            endcolumn="88"
+            endline="63"
+            endtoken="37581"
+            line="31"
+            path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/format/OdtFormatHandler.java"/>
+      <codefragment><![CDATA[        return MimeType.OFFICE_DOCUMENT.equals(mimeType);
+    }
+
+    @Override
+    public BufferedImage generateThumbnail(Path file) throws Exception {
+        // Use the PDF format handler
+        return new PdfFormatHandler().generateThumbnail(getGeneratedPdf(file));
+    }
+
+    @Override
+    public String extractContent(String language, Path file) throws Exception {
+        // Use the PDF format handler
+        return new PdfFormatHandler().extractContent(language, getGeneratedPdf(file));
+    }
+
+    @Override
+    public void appendToPdf(Path file, PDDocument doc, boolean fitImageToPage, int margin, MemoryUsageSetting memUsageSettings, Closer closer) throws Exception {
+        // Use the PDF format handler
+        new PdfFormatHandler().appendToPdf(getGeneratedPdf(file), doc, fitImageToPage, margin, memUsageSettings, closer);
+    }
+
+    /**
+     * Generate a PDF from this DOCX.
+     *
+     * @param file File
+     * @return PDF file
+     * @throws Exception e
+     */
+    private Path getGeneratedPdf(Path file) throws Exception {
+        if (temporaryPdfFile == null) {
+            temporaryPdfFile = AppContext.getInstance().getFileService().createTemporaryFile();
+            try (InputStream inputStream = Files.newInputStream(file);
+                 OutputStream outputStream = Files.newOutputStream(temporaryPdfFile)) {
+]]></codefragment>
+   </duplication>
+   <duplication lines="24" tokens="150">
+      <file begintoken="75172"
+            column="33"
+            endcolumn="6"
+            endline="134"
+            endtoken="75321"
+            line="111"
+            path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/RouteModelResource.java"/>
+      <file begintoken="79110"
+            column="38"
+            endcolumn="6"
+            endline="221"
+            endtoken="79259"
+            line="199"
+            path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/TagResource.java"/>
+      <codefragment><![CDATA[                .setSteps(steps), principal.getId());
+
+        // Create read ACL
+        AclDao aclDao = new AclDao();
+        Acl acl = new Acl();
+        acl.setPerm(PermType.READ);
+        acl.setType(AclType.USER);
+        acl.setSourceId(id);
+        acl.setTargetId(principal.getId());
+        aclDao.create(acl, principal.getId());
+
+        // Create write ACL
+        acl = new Acl();
+        acl.setPerm(PermType.WRITE);
+        acl.setType(AclType.USER);
+        acl.setSourceId(id);
+        acl.setTargetId(principal.getId());
+        aclDao.create(acl, principal.getId());
+
+        // Always return OK
+        JsonObjectBuilder response = Json.createObjectBuilder()
+                .add("id", id);
+        return Response.ok().entity(response.build()).build();
+    }
+]]></codefragment>
+   </duplication>
+   <duplication lines="40" tokens="119">
+      <file begintoken="25294"
+            column="38"
+            endcolumn="18"
+            endline="81"
+            endtoken="25412"
+            line="42"
+            path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Role.java"/>
+      <file begintoken="26912"
+            column="38"
+            endcolumn="18"
+            endline="79"
+            endtoken="27030"
+            line="40"
+            path="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/model/jpa/Share.java"/>
+      <codefragment><![CDATA[    @Column(name = "ROL_DELETEDATE_D")
+    private Date deleteDate;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getDeleteDate() {
+        return deleteDate;
+    }
+
+    public void setDeleteDate(Date deleteDate) {
+        this.deleteDate = deleteDate;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("id", id)
+                .add("name", name)
+]]></codefragment>
+   </duplication>
+   <duplication lines="23" tokens="117">
+      <file begintoken="73404"
+            column="23"
+            endcolumn="10"
+            endline="271"
+            endtoken="73520"
+            line="249"
+            path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/GroupResource.java"/>
+      <file begintoken="73678"
+            column="23"
+            endcolumn="10"
+            endline="340"
+            endtoken="73794"
+            line="318"
+            path="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/GroupResource.java"/>
+      <codefragment><![CDATA[            @FormParam("username") String username) {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+        checkBaseFunction(BaseFunction.ADMIN);
+        
+        // Validate input
+        groupName = ValidationUtil.validateLength(groupName, "name", 1, 50, false);
+        username = ValidationUtil.validateLength(username, "username", 1, 50, false);
+        
+        // Get the group
+        GroupDao groupDao = new GroupDao();
+        Group group = groupDao.getActiveByName(groupName);
+        if (group == null) {
+            throw new NotFoundException();
+        }
+        
+        // Get the user
+        UserDao userDao = new UserDao();
+        User user = userDao.getActiveByUsername(username);
+        if (user == null) {
+            throw new NotFoundException();
+        }
+]]></codefragment>
+   </duplication>
+</pmd-cpd>

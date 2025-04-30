@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="7.0.0" timestamp="2025-04-23T11:58:12.573">
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/dao/GroupDao.java">
+<violation beginline="162" endline="162" begincolumn="27" endcolumn="41" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.dao" class="GroupDao" method="findByCriteria" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'findByCriteria(GroupCriteria, SortCriteria)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/service/InboxService.java">
+<violation beginline="1" endline="301" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.core.service" class="InboxService" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="193" endline="193" begincolumn="18" endcolumn="31" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.service" class="InboxService" method="importMessage" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'importMessage(Message, Map&lt;String, String&gt;)' has a cyclomatic complexity of 12.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/DirectoryUtil.java">
+<violation beginline="23" endline="23" begincolumn="24" endcolumn="44" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="DirectoryUtil" method="getBaseDataDirectory" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getBaseDataDirectory()' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/FileUtil.java">
+<violation beginline="120" endline="120" begincolumn="26" endcolumn="36" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="FileUtil" method="createFile" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'createFile(String, String, Path, long, String, String, String)' has a cyclomatic complexity of 15.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/MetadataUtil.java">
+<violation beginline="33" endline="33" begincolumn="24" endcolumn="38" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="MetadataUtil" method="updateMetadata" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'updateMetadata(String, List&lt;String&gt;, List&lt;String&gt;)' has a cyclomatic complexity of 14.
+</violation>
+<violation beginline="93" endline="93" begincolumn="25" endcolumn="38" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="MetadataUtil" method="validateValue" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validateValue(MetadataType, String)' has a cyclomatic complexity of 12.
+</violation>
+<violation beginline="158" endline="158" begincolumn="24" endcolumn="35" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="MetadataUtil" method="addMetadata" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'addMetadata(JsonObjectBuilder, String)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/PdfUtil.java">
+<violation beginline="52" endline="52" begincolumn="24" endcolumn="36" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="PdfUtil" method="convertToPdf" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'convertToPdf(DocumentDto, List&lt;File&gt;, boolean, boolean, int, OutputStream)' has a cyclomatic complexity of 12.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/TransactionUtil.java">
+<violation beginline="27" endline="27" begincolumn="24" endcolumn="30" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util" class="TransactionUtil" method="handle" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'handle(Runnable)' has a cyclomatic complexity of 13.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/docs/core/util/indexing/LuceneIndexingHandler.java">
+<violation beginline="1" endline="624" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="74" endline="74" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=86, ATFD=92, TCC=5.628%)
+</violation>
+<violation beginline="74" endline="74" begincolumn="8" endcolumn="13" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'LuceneIndexingHandler' has a total cyclomatic complexity of 86 (highest 24).
+</violation>
+<violation beginline="252" endline="252" begincolumn="17" endcolumn="31" rule="NcssCount" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" method="findByCriteria" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'findByCriteria(PaginatedList&lt;DocumentDto&gt;, List&lt;String&gt;, DocumentCriteria, SortCriteria)' has a NCSS line count of 95.
+</violation>
+<violation beginline="252" endline="252" begincolumn="17" endcolumn="31" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" method="findByCriteria" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'findByCriteria(PaginatedList&lt;DocumentDto&gt;, List&lt;String&gt;, DocumentCriteria, SortCriteria)' has a cyclomatic complexity of 24.
+</violation>
+<violation beginline="501" endline="501" begincolumn="49" endcolumn="72" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.core.util.indexing" class="LuceneIndexingHandler" method="getDocumentFromDocument" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getDocumentFromDocument(Document)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/EmailUtil.java">
+<violation beginline="83" endline="83" begincolumn="25" endcolumn="34" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util" class="EmailUtil" method="sendEmail" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'sendEmail(String, UserDto, String, Map&lt;String, Object&gt;)' has a cyclomatic complexity of 13.
+</violation>
+<violation beginline="193" endline="193" begincolumn="24" endcolumn="40" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util" class="EmailUtil" method="parseMailContent" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'parseMailContent(Part, MailContent)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/ResourceUtil.java">
+<violation beginline="34" endline="34" begincolumn="32" endcolumn="36" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util" class="ResourceUtil" method="list" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'list(Class&lt;?&gt;, String, FilenameFilter)' has a cyclomatic complexity of 14.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/jpa/DbOpenHelper.java">
+<violation beginline="56" endline="56" begincolumn="17" endcolumn="21" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.jpa" class="DbOpenHelper" method="open" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'open()' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/log4j/MemoryAppender.java">
+<violation beginline="101" endline="101" begincolumn="17" endcolumn="21" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.log4j" class="MemoryAppender" method="find" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'find(LogCriteria, PaginatedList&lt;LogEntry&gt;)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/com/sismics/util/mime/MimeTypeUtil.java">
+<violation beginline="42" endline="42" begincolumn="26" endcolumn="42" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.mime" class="MimeTypeUtil" method="getFileExtension" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getFileExtension(String)' has a cyclomatic complexity of 12.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-core/src/main/java/org/apache/pdfbox/pdmodel/font/DocsPDType1Font.java">
+<violation beginline="31" endline="31" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="org.apache.pdfbox.pdmodel.font" class="DocsPDType1Font" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=58, ATFD=29, TCC=30.719%)
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/rest/util/ValidationUtil.java">
+<violation beginline="50" endline="50" begincolumn="26" endcolumn="40" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.rest.util" class="ValidationUtil" method="validateLength" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validateLength(String, String, Integer, Integer, boolean)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web-common/src/main/java/com/sismics/util/filter/RequestContextFilter.java">
+<violation beginline="74" endline="74" begincolumn="17" endcolumn="25" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.util.filter" class="RequestContextFilter" method="doFilter" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'doFilter(ServletRequest, ServletResponse, FilterChain)' has a cyclomatic complexity of 17.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/AclResource.java">
+<violation beginline="146" endline="146" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AclResource" method="delete" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'delete(String, String, String)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/AppResource.java">
+<violation beginline="1" endline="888" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="54" endline="54" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=87, ATFD=50, TCC=0.000%)
+</violation>
+<violation beginline="54" endline="54" begincolumn="8" endcolumn="13" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'AppResource' has a total cyclomatic complexity of 87 (highest 12).
+</violation>
+<violation beginline="224" endline="224" begincolumn="21" endcolumn="34" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="getConfigSmtp" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getConfigSmtp()' has a cyclomatic complexity of 12.
+</violation>
+<violation beginline="354" endline="354" begincolumn="21" endcolumn="35" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="getConfigInbox" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'getConfigInbox()' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="454" endline="454" begincolumn="21" endcolumn="32" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="configInbox" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'configInbox(Boolean, Boolean, Boolean, String, String, Boolean, String, String, String, String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="651" endline="651" begincolumn="21" endcolumn="38" rule="NcssCount" ruleset="Design" package="com.sismics.docs.rest.resource" class="AppResource" method="batchCleanStorage" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'batchCleanStorage()' has a NCSS line count of 70.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/DocumentResource.java">
+<violation beginline="1" endline="1100" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="98" endline="98" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=84, ATFD=154, TCC=0.000%)
+</violation>
+<violation beginline="98" endline="98" begincolumn="8" endcolumn="13" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'DocumentResource' has a total cyclomatic complexity of 84 (highest 14).
+</violation>
+<violation beginline="177" endline="177" begincolumn="21" endcolumn="24" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="get" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'get(String, String, Boolean)' has a cyclomatic complexity of 13.
+</violation>
+<violation beginline="429" endline="429" begincolumn="21" endcolumn="25" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="list" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'list(Integer, Integer, Integer, Boolean, String, Boolean, String, String, String, String, String, String, Boolean, String, String, String, String, String, String, String)' has a cyclomatic complexity of 11.
+</violation>
+<violation beginline="781" endline="781" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="update" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String, String, String, String, String, String, String, String, List&lt;String&gt;, List&lt;String&gt;, List&lt;String&gt;, List&lt;String&gt;, String, String)' has a cyclomatic complexity of 13.
+</violation>
+<violation beginline="899" endline="899" begincolumn="21" endcolumn="30" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="DocumentResource" method="importEml" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'importEml(FormDataBodyPart)' has a cyclomatic complexity of 14.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/FileResource.java">
+<violation beginline="1" endline="812" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="61" endline="61" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=87, ATFD=84, TCC=0.000%)
+</violation>
+<violation beginline="61" endline="61" begincolumn="8" endcolumn="13" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'FileResource' has a total cyclomatic complexity of 87 (highest 14).
+</violation>
+<violation beginline="92" endline="92" begincolumn="21" endcolumn="24" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="add" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'add(String, String, FormDataBodyPart)' has a cyclomatic complexity of 14.
+</violation>
+<violation beginline="166" endline="166" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="attach" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'attach(String, String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="286" endline="286" begincolumn="21" endcolumn="28" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="process" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'process(String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="568" endline="568" begincolumn="21" endcolumn="25" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="FileResource" method="data" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'data(String, String, String)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/GroupResource.java">
+<violation beginline="39" endline="39" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.resource" class="GroupResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=60, ATFD=33, TCC=0.000%)
+</violation>
+<violation beginline="119" endline="119" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="GroupResource" method="update" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String)' has a cyclomatic complexity of 14.
+</violation>
+<violation beginline="190" endline="190" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="GroupResource" method="delete" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'delete(String)' has a cyclomatic complexity of 10.
+</violation>
+<violation beginline="248" endline="248" begincolumn="21" endcolumn="30" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="GroupResource" method="addMember" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'addMember(String, String)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/RouteModelResource.java">
+<violation beginline="1" endline="397" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteModelResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="35" endline="35" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteModelResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=60, ATFD=31, TCC=0.000%)
+</violation>
+<violation beginline="141" endline="141" begincolumn="18" endcolumn="41" rule="NcssCount" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteModelResource" method="validateRouteModelSteps" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#ncsscount" priority="3">
+The method 'validateRouteModelSteps(String)' has a NCSS line count of 77.
+</violation>
+<violation beginline="141" endline="141" begincolumn="18" endcolumn="41" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteModelResource" method="validateRouteModelSteps" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validateRouteModelSteps(String)' has a cyclomatic complexity of 38.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/RouteResource.java">
+<violation beginline="1" endline="338" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="33" endline="33" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=50, ATFD=32, TCC=0.000%)
+</violation>
+<violation beginline="54" endline="54" begincolumn="21" endcolumn="26" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteResource" method="start" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'start(String, String)' has a cyclomatic complexity of 15.
+</violation>
+<violation beginline="151" endline="151" begincolumn="21" endcolumn="29" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="RouteResource" method="validate" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'validate(String, String, String)' has a cyclomatic complexity of 21.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/TagResource.java">
+<violation beginline="250" endline="250" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="TagResource" method="update" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String)' has a cyclomatic complexity of 13.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/UserResource.java">
+<violation beginline="1" endline="1145" begincolumn="1" endcolumn="3" rule="CouplingBetweenObjects" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#couplingbetweenobjects" priority="3">
+High amount of different objects as members denotes a high coupling
+</violation>
+<violation beginline="53" endline="53" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=133, ATFD=135, TCC=0.000%)
+</violation>
+<violation beginline="53" endline="53" begincolumn="8" endcolumn="13" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The class 'UserResource' has a total cyclomatic complexity of 133 (highest 15).
+</violation>
+<violation beginline="199" endline="199" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" method="update" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String, Boolean)' has a cyclomatic complexity of 15.
+</violation>
+<violation beginline="285" endline="285" begincolumn="21" endcolumn="26" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" method="login" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'login(String, String, String, boolean)' has a cyclomatic complexity of 12.
+</violation>
+<violation beginline="468" endline="468" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="UserResource" method="delete" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'delete(String)' has a cyclomatic complexity of 11.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/resource/VocabularyResource.java">
+<violation beginline="150" endline="150" begincolumn="21" endcolumn="27" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.resource" class="VocabularyResource" method="update" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'update(String, String, String, String)' has a cyclomatic complexity of 10.
+</violation>
+</file>
+<file name="/mnt/c/github/Teedy/docs-web/src/main/java/com/sismics/docs/rest/util/DocumentSearchCriteriaUtil.java">
+<violation beginline="23" endline="23" begincolumn="8" endcolumn="13" rule="GodClass" ruleset="Design" package="com.sismics.docs.rest.util" class="DocumentSearchCriteriaUtil" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#godclass" priority="3">
+Possible God Class (WMC=62, ATFD=49, TCC=9.524%)
+</violation>
+<violation beginline="48" endline="48" begincolumn="36" endcolumn="52" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.util" class="DocumentSearchCriteriaUtil" method="parseSearchQuery" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'parseSearchQuery(String, List&lt;TagDto&gt;)' has a cyclomatic complexity of 22.
+</violation>
+<violation beginline="138" endline="138" begincolumn="24" endcolumn="43" rule="CyclomaticComplexity" ruleset="Design" package="com.sismics.docs.rest.util" class="DocumentSearchCriteriaUtil" method="addHttpSearchParams" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#cyclomaticcomplexity" priority="3">
+The method 'addHttpSearchParams(DocumentCriteria, String, String, String, String, String, String, Boolean, String, String, String, String, String, String, String, List&lt;TagDto&gt;)' has a cyclomatic complexity of 18.
+</violation>
+</file>
+</pmd>
