@@ -23,8 +23,6 @@ import java.util.*;
  * User registration DAO.
  */
 public class UserRegistrationDao {
-    @PersistenceContext
-    private EntityManager entityManager;
 
     /**
      * Creates a new user registration record.
@@ -34,14 +32,13 @@ public class UserRegistrationDao {
      * @throws Exception if a user with the same username already exists.
      */
     public String create(UserRegistration userRegistration) throws Exception {
-
+        EntityManager entityManager = ThreadLocalContext.get().getEntityManager();
         // Checks for registration unicity
         Query q = entityManager.createQuery("select r from UserRegistration r where r.username = :username");
         String username = userRegistration.getUsername();
         q.setParameter("username", username);
         if (!q.getResultList().isEmpty()) {
-            System.out.println("The same username already exists: " + username);
-            throw new Exception("AlreadyExistingUsername");
+            throw new Exception("The same username already exists: " + username);
         }
 
         // Create the registration UUID
@@ -70,21 +67,22 @@ public class UserRegistrationDao {
      * @return the updated user registration
      */
     public UserRegistration update(UserRegistration newUser, String id) {
+        EntityManager entityManager = ThreadLocalContext.get().getEntityManager();
 
         // Get the registration
         Query q = entityManager.createQuery("select r from UserRegistration r where r.id = :id");
         q.setParameter("id", id);
-        UserRegistration oldUser = (UserRegistration) q.getSingleResult();
+        UserRegistration userRegistrationDb = (UserRegistration) q.getSingleResult();
 
         // Update the registration
-        oldUser.setUsername(newUser.getUsername());
-        oldUser.setEmail(newUser.getEmail());
-        oldUser.setRegistrationDate(newUser.getRegistrationDate());
-        oldUser.setStatus(newUser.getStatus());
-        oldUser.setAdminComment(newUser.getAdminComment());
+        userRegistrationDb.setUsername(newUser.getUsername());
+        userRegistrationDb.setEmail(newUser.getEmail());
+        userRegistrationDb.setRegistrationDate(newUser.getRegistrationDate());
+        userRegistrationDb.setStatus(newUser.getStatus());
+        userRegistrationDb.setAdminComment(newUser.getAdminComment());
 
         // Create audit log
-        AuditLogUtil.create(oldUser, AuditLogType.UPDATE, id);
+        AuditLogUtil.create(userRegistrationDb, AuditLogType.UPDATE, id);
 
         return newUser;
     }
@@ -142,6 +140,7 @@ public class UserRegistrationDao {
      * @return UserRegistration
      */
     public UserRegistration findById(String id) {
+        EntityManager entityManager = ThreadLocalContext.get().getEntityManager();
         try {
             return entityManager.find(UserRegistration.class, id);
         } catch (Exception e) {
