@@ -8,8 +8,6 @@ import java.util.Date;
 
 /**
  * User registration entity.
- *
- * @author sicheng
  */
 @Entity
 @Table(name = "T_USER_REGISTRATION")
@@ -89,9 +87,8 @@ public class UserRegistration implements Loggable{
     public Date getRegistrationDate() {
         return RegistrationDate;
     }
-    public UserRegistration setRegistrationDate(Date registrationDate) {
+    public void setRegistrationDate(Date registrationDate) {
         RegistrationDate = registrationDate;
-        return this;
     }
     public String getStatus() {
         return status;
@@ -103,29 +100,35 @@ public class UserRegistration implements Loggable{
     public String getAdminComment() {
         return adminComment;
     }
-    public UserRegistration setAdminComment(String adminComment) {
+    public void setAdminComment(String adminComment) {
         this.adminComment = adminComment;
-        return this;
     }
 
     @Override
     public String toString() {
-        return "UserRegistration{" +
-                "id='" + id + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", registrationDate=" + RegistrationDate +
-                ", status='" + status + '\'' +
-                ", adminComment='" + adminComment + '\'' +
+        return "UserRegistration = {" +
+                " id=[" + id + "],"+
+                " username=[" + username +  "],"+
+                " email=[" + email + "],"+
+                " password=[" + password + "],"+
+                " registrationDate=[" + RegistrationDate +"],"+
+                " status=[" + status + "],"+
+                " adminComment=[" + adminComment +
                 '}';
     }
     @Override
     public String toMessage() {
         return username;
     }
+
+    /**
+     * Loggable are soft deletable.
+     *
+     * @return deleteDate
+     */
     @Override
     public Date getDeleteDate() {
         return null;
     }
+
 }
