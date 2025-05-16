@@ -4,8 +4,6 @@ import com.google.common.base.MoreObjects;
 
 /**
  * User registration DTO.
- *
- * @author sicheng
  */
 public class UserRegistrationDto {
     /**
@@ -42,6 +40,16 @@ public class UserRegistrationDto {
      * Admin comment.
      */
     private String adminComment;
+
+    public UserRegistrationDto(String id, String username, String password, String email, Long registrationDate, String status, String adminComment) {
+         this.id = id;
+         this.username = username;
+         this.password = password;
+         this.email = email;
+         this.registrationDate = registrationDate;
+         this.status = status;
+         this.adminComment = adminComment;
+     }
 
     public String getId() {
         return id;
