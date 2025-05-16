@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 checkout scmGit(
-                    branches: [[name: '*/master']],
+                    branches: [[name: '*/site_document']],
                     extensions: [],
                     userRemoteConfigs: [[url: 'https://github.com/Iseeyourmonsters/Teedy.git']]
                     // Your GitHub Repository
