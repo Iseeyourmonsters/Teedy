@@ -54,10 +54,10 @@ public class UserRegistrationResource extends BaseResource {
      * @return A standard JAX-RS Response object.
      * @api {put} /userRegistration Register a new user
      * @apiName PutRegister
-     * @apiParam {String} username Username
-     * @apiParam {String} password Password
+     * @apiParam {String} username
+     * @apiParam {String} password
      * @apiParam {String} email E-mail
-     * @apiSuccess {String} status Status OK
+     * @apiSuccess {String} status OK
      * @apiError (client) ValidationError Validation error
      * @apiError (server) PrivateKeyError Error while generating a private key (Note: This specific error handling is not part of the current logic).
      * @apiError (client) AlreadyExistingUsername Login already used
@@ -65,12 +65,10 @@ public class UserRegistrationResource extends BaseResource {
      * @apiVersion 1.5.0
      */
     @PUT
-    public Response register
-    (
+    public Response register(
             @FormParam("username") String usernameInput,
             @FormParam("password") String passwordInput,
-            @FormParam("email") String emailInput
-    ) {
+            @FormParam("email") String emailInput) {
         logger.debug("Processing registration request for username: {}", usernameInput);
 
         // Perform data validation on inputs
@@ -129,7 +127,7 @@ public class UserRegistrationResource extends BaseResource {
      * @apiParam {Boolean} asc If true, sort in ascending order
      * @apiSuccess {Object[]} registrations List of registrations
      * @apiSuccess {String} requests.id ID
-     * @apiSuccess {String} requests.username Username
+     * @apiSuccess {String} requests. Username
      * @apiSuccess {String} requests.email E-mail
      * @apiSuccess {Number} requests.registration_date Registration date (timestamp)
      * @apiSuccess {String} registration_date.admin_comment Admin comment
@@ -139,15 +137,9 @@ public class UserRegistrationResource extends BaseResource {
      */
     @GET
     @Path("/list")
-    public Response list
-    (
+    public Response list(
             @QueryParam("sort_column") Integer sortColumnInput,
-            @QueryParam("asc") Boolean ascInput
-    ) {
-        // Verify user authentication status
-        if (!authenticate()) {
-            throw new ForbiddenClientException();
-        }
+            @QueryParam("asc") Boolean ascInput) {
 
         logger.debug("Retrieving list of user registrations with sort column: {} and ascending: {}", sortColumnInput, ascInput);
 
@@ -196,8 +188,8 @@ public class UserRegistrationResource extends BaseResource {
      * @return A standard JAX-RS Response object.
      * @api {put} /approve Approve registration
      * @apiName approveRegistration
-     * @apiParam {String} id ID
-     * @apiSuccess {String} status Status OK
+     * @apiParam {String} id
+     * @apiSuccess {String} status OK
      * @apiError (client) ValidationError Validation error (Implicitly handled by DAO/persistence layer or NotFound check).
      * @apiError (client) UserRegistrationNotFound User registration not found.
      * @apiError (server) UnknownError Unknown server error.
@@ -205,16 +197,9 @@ public class UserRegistrationResource extends BaseResource {
      */
     @PUT
     @Path("/approveRegistration")
-    public Response approveRegistration
-    (
-            @FormParam("id") String registrationIdToApprove
-    ) {
+    public Response approveRegistration(
+            @FormParam("id") String registrationIdToApprove) {
         logger.debug("Initiating approval process for registration ID: {}", registrationIdToApprove);
-
-        // Ensure the user is authenticated
-        if (!authenticate()) {
-            throw new ForbiddenClientException();
-        }
 
         // Retrieve the target registration using the injected DAO
         // Assuming the DAO method is findById as per the latest code provided
