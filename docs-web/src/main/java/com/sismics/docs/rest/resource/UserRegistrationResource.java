@@ -1,10 +1,9 @@
 package com.sismics.docs.rest.resource;
 
 import com.sismics.docs.core.constant.Constants;
-import com.sismics.docs.core.dao.UserRegistrationDao;
-import com.sismics.docs.core.dao.dto.UserRegistrationDto;
-// Importing existing exception types
-import com.sismics.docs.core.model.jpa.UserRegistration;
+import com.sismics.docs.core.dao.*;
+import com.sismics.docs.core.dao.dto.*;
+import com.sismics.docs.core.model.jpa.*;
 import com.sismics.docs.core.util.jpa.SortCriteria;
 import com.sismics.rest.exception.ClientException;
 import com.sismics.rest.exception.ForbiddenClientException;
@@ -17,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import java.util.Date;
 import java.util.List;
 
-import jakarta.inject.Inject; // Using standard CDI Inject
 import jakarta.json.Json;
 import jakarta.json.JsonArrayBuilder;
 import jakarta.json.JsonObjectBuilder;
@@ -29,97 +27,82 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
 
 /**
- * Resource handling user registration operations.
+ * User registration resource.
  */
 @Path("/userRegistration")
 public class UserRegistrationResource extends BaseResource {
     /**
-     * Logger instance for user registration resource.
+     * Logger.
      */
-    private static final Logger logger = LoggerFactory.getLogger(UserRegistrationResource.class);
+    private static final Logger log = LoggerFactory.getLogger(UserRegistrationResource.class);
 
     /**
-     * Injected Data Access Object for UserRegistration entities.
-     * Managed by the application container (e.g., CDI, Spring).
-     */
-    @Inject
-    private UserRegistrationDao userRegistrationDao;
-
-    /**
-     * Endpoint for submitting a new user registration request.
+     * Create a new registration request.
      *
-     * @param usernameInput The desired username for the new user.
-     * @param passwordInput The password chosen by the user.
-     * @param emailInput    The user's email address.
-     * @return A standard JAX-RS Response object.
+     * @param username User's username
+     * @param password Password
+     * @param email    E-Mail
+     * @return Response
      * @api {put} /userRegistration Register a new user
      * @apiName PutRegister
-     * @apiParam {String} username
-     * @apiParam {String} password
-     * @apiParam {String} email E-mail
-     * @apiSuccess {String} status OK
+     * @apiParam {String{3..50}} username Username
+     * @apiParam {String{8..50}} password Password
+     * @apiParam {String{1..100}} email E-mail
+     * @apiSuccess {String} status Status OK
      * @apiError (client) ValidationError Validation error
-     * @apiError (server) PrivateKeyError Error while generating a private key (Note: This specific error handling is not part of the current logic).
+     * @apiError (server) PrivateKeyError Error while generating a private key
      * @apiError (client) AlreadyExistingUsername Login already used
      * @apiError (server) UnknownError Unknown server error
      * @apiVersion 1.5.0
      */
     @PUT
     public Response register(
-            @FormParam("username") String usernameInput,
-            @FormParam("password") String passwordInput,
-            @FormParam("email") String emailInput) {
-        logger.debug("Processing registration request for username: {}", usernameInput);
+            @FormParam("username") String username,
+            @FormParam("password") String password,
+            @FormParam("email") String email) {
 
-        // Perform data validation on inputs
-        String validatedUsername = ValidationUtil.validateLength(usernameInput, "username", 3, 50);
-        ValidationUtil.validateUsername(validatedUsername, "username");
+        log.debug("inside register, username: " + username + ", password: " + password + ", email: " + email);
 
-        String validatedPassword = ValidationUtil.validateLength(passwordInput, "password", 8, 50);
+        // Validate the input data
+        username = ValidationUtil.validateLength(username, "username", 3, 50);
+        ValidationUtil.validateUsername(username, "username");
+        password = ValidationUtil.validateLength(password, "password", 8, 50);
+        email = ValidationUtil.validateLength(email, "email", 1, 100);
+        ValidationUtil.validateEmail(email, "email");
 
-        String validatedEmail = ValidationUtil.validateLength(emailInput, "email", 1, 100);
-        ValidationUtil.validateEmail(validatedEmail, "email");
+        // Create the user registration
+        UserRegistration userRegistration = new UserRegistration();
+        userRegistration.setUsername(username);
+        userRegistration.setEmail(email);
+        userRegistration.setPassword(password);
+        userRegistration.setStatus(Constants.DEFAULT_REGISTRATION_STATUS);
+        userRegistration.setRegistrationDate(new Date());
+        userRegistration.setAdminComment(null);
 
-        // Create a new UserRegistration entity with validated data
-        UserRegistration newUserRegistration = new UserRegistration();
-        newUserRegistration.setUsername(validatedUsername);
-        newUserRegistration.setEmail(validatedEmail);
-        newUserRegistration.setPassword(validatedPassword);
-        // Setting status and date here as in original code, though DAO might override/default
-        newUserRegistration.setStatus(Constants.DEFAULT_REGISTRATION_STATUS);
-        newUserRegistration.setRegistrationDate(new Date());
-        newUserRegistration.setAdminComment(null); // Set to null, DAO might set a default
-
+        // Create the userRegistrationDao
+        UserRegistrationDao userRegistrationDao = new UserRegistrationDao();
         try {
-            // Call the injected DAO to persist the registration request
-            userRegistrationDao.create(newUserRegistration);
-            logger.info("Successfully created user registration for {}", validatedUsername);
-        } catch (Exception daoException) {
-            // Catching generic Exception and checking message string as per original code logic.
-            // This is less ideal than catching specific exceptions but adheres to constraints.
-            if ("AlreadyExistingUsername".equals(daoException.getMessage())) {
-                logger.warn("Registration failed: username {} already exists", validatedUsername);
-                throw new ClientException("AlreadyExistingUsername", "Login already used", daoException);
+            userRegistrationDao.create(userRegistration);
+        } catch (Exception e) {
+            if ("AlreadyExistingUsername".equals(e.getMessage())) {
+                throw new ClientException("AlreadyExistingUsername", "Login already used", e);
             } else {
-                logger.error("An unexpected server error occurred during registration", daoException);
-                throw new ServerException("UnknownError", "Unknown server error", daoException);
+                throw new ServerException("UnknownError", "Unknown server error", e);
             }
         }
 
-        // Build the success response JSON
-        JsonObjectBuilder successResponseBuilder = Json.createObjectBuilder()
+        // Always return OK
+        JsonObjectBuilder response = Json.createObjectBuilder()
                 .add("status", "ok");
-
-        return Response.ok().entity(successResponseBuilder.build()).build();
+        return Response.ok().entity(response.build()).build();
     }
 
     /**
-     * Provides a list of all user registrations.
-     * Requires user authentication.
+     * Returns all registrations.
      *
-     * @param sortColumnInput The index representing the column to sort results by.
-     * @param ascInput        Boolean flag: true for ascending sort, false for descending.
-     * @return A Response containing a JSON array of registration details.
+     * @param sortColumn Sort index
+     * @param asc        If true, ascending sorting, else descending
+     * @return Response
      * @api {get} /userRegistration/list Get registration list
      * @apiName GetUserList
      * @apiGroup User
@@ -127,7 +110,7 @@ public class UserRegistrationResource extends BaseResource {
      * @apiParam {Boolean} asc If true, sort in ascending order
      * @apiSuccess {Object[]} registrations List of registrations
      * @apiSuccess {String} requests.id ID
-     * @apiSuccess {String} requests. Username
+     * @apiSuccess {String} requests.username Username
      * @apiSuccess {String} requests.email E-mail
      * @apiSuccess {Number} requests.registration_date Registration date (timestamp)
      * @apiSuccess {String} registration_date.admin_comment Admin comment
@@ -138,98 +121,76 @@ public class UserRegistrationResource extends BaseResource {
     @GET
     @Path("/list")
     public Response list(
-            @QueryParam("sort_column") Integer sortColumnInput,
-            @QueryParam("asc") Boolean ascInput) {
-
-        logger.debug("Retrieving list of user registrations with sort column: {} and ascending: {}", sortColumnInput, ascInput);
-
-        // Create sorting criteria object
-        SortCriteria sortParameters = new SortCriteria(sortColumnInput, ascInput);
-
-        // Fetch registration DTOs using the injected DAO's findByCriteria method.
-        // Pass null for criteria to get all records as intended by this list endpoint.
-        List<UserRegistrationDto> fetchedRegistrationDtoList = userRegistrationDao.findAllRegisters(sortParameters);
-
-        // Build the JSON array for the response
-        JsonArrayBuilder registrationsJsonArrayBuilder = Json.createArrayBuilder();
-        for (UserRegistrationDto registrationDto : fetchedRegistrationDtoList) {
-            JsonObjectBuilder registrationJsonObjectBuilder = Json.createObjectBuilder()
-                    .add("id", registrationDto.getId())
-                    .add("username", registrationDto.getUsername())
-                    // Security Improvement: Do NOT expose the password in the response
-                    // .add("password", registrationDto.getPassword())
-                    .add("email", registrationDto.getEmail());
-
-            // Include optional fields if available in the DTO
-            if (registrationDto.getRegistrationDate() != 0) // Assuming 0 indicates unset/default long timestamp
-                registrationJsonObjectBuilder.add("registration_date", registrationDto.getRegistrationDate());
-            if (registrationDto.getStatus() != null)
-                registrationJsonObjectBuilder.add("status", registrationDto.getStatus());
-            if (registrationDto.getAdminComment() != null)
-                registrationJsonObjectBuilder.add("admin_comment", registrationDto.getAdminComment());
-
-            registrationsJsonArrayBuilder.add(registrationJsonObjectBuilder);
+            @QueryParam("sort_column") Integer sortColumn,
+            @QueryParam("asc") Boolean asc) {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
         }
 
-        logger.debug("Successfully retrieved {} user registrations.", fetchedRegistrationDtoList.size());
+        JsonArrayBuilder requests = Json.createArrayBuilder();
+        SortCriteria sortCriteria = new SortCriteria(sortColumn, asc);
 
-        // Construct the final response JSON object
-        JsonObjectBuilder responseJsonObjectBuilder = Json.createObjectBuilder()
-                .add("registrations", registrationsJsonArrayBuilder); // Note: Changed key from "requests" to "registrations" to match API success description
+        UserRegistrationDao userRegistrationDao = new UserRegistrationDao();
+        List<UserRegistrationDto> userRegistrationDtoList = userRegistrationDao.findAllRegisters(sortCriteria);
+        for (UserRegistrationDto userRegistrationDto : userRegistrationDtoList) {
+            log.debug("register username in dto: " + userRegistrationDto.getUsername());
+            requests.add(Json.createObjectBuilder()
+                    .add("id", userRegistrationDto.getId())
+                    .add("username", userRegistrationDto.getUsername())
+                    .add("password", userRegistrationDto.getPassword())
+                    .add("email", userRegistrationDto.getEmail())
+                    .add("registration_date", userRegistrationDto.getRegistrationDate())
+                    .add("status", userRegistrationDto.getStatus())
+                    .add("admin_comment", userRegistrationDto.getAdminComment()));
+        }
 
-        return Response.ok().entity(responseJsonObjectBuilder.build()).build();
+        log.debug("fetch list good");
+
+        JsonObjectBuilder response = Json.createObjectBuilder()
+                .add("requests", requests);
+        return Response.ok().entity(response.build()).build();
     }
 
     /**
-     * Approves a previously submitted user registration.
-     * Requires user authentication.
+     * Approve a registration.
      *
-     * @param registrationIdToApprove The unique identifier of the registration to approve.
-     * @return A standard JAX-RS Response object.
+     * @param id ID of the registration to update
+     * @return Response
      * @api {put} /approve Approve registration
      * @apiName approveRegistration
-     * @apiParam {String} id
-     * @apiSuccess {String} status OK
-     * @apiError (client) ValidationError Validation error (Implicitly handled by DAO/persistence layer or NotFound check).
-     * @apiError (client) UserRegistrationNotFound User registration not found.
-     * @apiError (server) UnknownError Unknown server error.
+     * @apiParam {String} id ID
+     * @apiSuccess {String} status Status OK
+     * @apiError (client) ValidationError Validation error
+     * @apiError (server) UnknownError Unknown server error
      * @apiVersion 1.5.0
      */
     @PUT
     @Path("/approveRegistration")
     public Response approveRegistration(
-            @FormParam("id") String registrationIdToApprove) {
-        logger.debug("Initiating approval process for registration ID: {}", registrationIdToApprove);
+            @FormParam("id") String id) {
+        log.debug("inside approveRegistration, id: " + id);
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
 
-        // Retrieve the target registration using the injected DAO
-        // Assuming the DAO method is findById as per the latest code provided
-        UserRegistration targetRegistration = userRegistrationDao.findById(registrationIdToApprove);
-
-        // Check if the registration exists
-        if (targetRegistration == null) {
-            logger.warn("Attempted to approve non-existent registration ID: {}", registrationIdToApprove);
-            throw new ClientException("UserRegistrationNotFound", "User registration with the provided ID was not found.");
+        // Update the user registration
+        UserRegistrationDao userRegistrationDao = new UserRegistrationDao();
+        UserRegistration userRegistration = userRegistrationDao.findById(id);
+        if (userRegistration == null) {
+            throw new ClientException("UserRegistrationNotFound", "User registration not found");
         }
 
         try {
-            // Update the status of the retrieved entity
-            targetRegistration.setStatus(Constants.APPROVED_REGISTRATION_STATUS);
-
-            // Call the injected DAO to persist the update.
-            // The update method signature in the refactored DAO matches (entity, id).
-            userRegistrationDao.update(targetRegistration, registrationIdToApprove);
-
-            logger.info("User registration {} approved successfully", targetRegistration.getUsername());
-        } catch (Exception daoException) {
-            // Catching generic Exception as per original code logic and constraints.
-            logger.error("An unexpected server error occurred during registration approval", daoException);
-            throw new ServerException("UnknownError", "Unknown server error during approval process", daoException);
+            userRegistration.setStatus(Constants.APPROVED_REGISTRATION_STATUS);
+            userRegistrationDao.update(userRegistration, id);
+            log.info("User registration approved: " + userRegistration.getUsername());
+        } catch (Exception e) {
+            throw new ServerException("UnknownError", "Unknown server error", e);
         }
 
-        // Build the success response JSON
-        JsonObjectBuilder approvalSuccessResponseBuilder = Json.createObjectBuilder()
+        // Always return OK
+        JsonObjectBuilder response = Json.createObjectBuilder()
                 .add("status", "ok");
-
-        return Response.ok().entity(approvalSuccessResponseBuilder.build()).build();
+        return Response.ok().entity(response.build()).build();
     }
 }

@@ -181,6 +181,24 @@ angular.module('docs',
         }
       }
     })
+    .state('register', {
+      url: '/register',
+      views: {
+        'page': {
+          templateUrl: 'partial/docs/register.html',
+          controller: 'Register'
+        }
+      }
+    })
+      .state('settings.registration', {
+        url: '/registration',
+        views: {
+          'settings': {
+            templateUrl: 'partial/docs/settings.registration.html',
+            controller: 'SettingsRegistration'
+          }
+        }
+      })
     .state('settings.workflow', {
       url: '/workflow',
       views: {
@@ -470,10 +488,10 @@ angular.module('docs',
     var param = function(obj) {
       var query = '';
       var name, value, fullSubName, subName, subValue, innerObj, i;
-      
+
       for(name in obj) {
         value = obj[name];
-        
+
         if(value instanceof Array) {
           for(i=0; i<value.length; ++i) {
             subValue = value[i];
@@ -495,10 +513,10 @@ angular.module('docs',
           query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
         }
       }
-      
+
       return query.length ? query.substr(0, query.length - 1) : query;
     };
-    
+
     return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
   }];
 
