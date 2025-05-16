@@ -14,7 +14,22 @@
     "password_lost_sent_title": "Password reset email sent",
     "password_lost_sent_message": "An email has been sent to <strong>{{ username }}</strong> to reset your password",
     "password_lost_error_title": "Password reset error",
-    "password_lost_error_message": "Unable to send a password reset email, please contact your administrator for a manual reset"
+    "password_lost_error_message": "Unable to send a password reset email, please contact your administrator for a manual reset",
+    "register": "Create an account"
+  },
+  "register": {
+    "title": "Register",
+    "message": "Please enter your username and password to create an account",
+    "submit": "Create my account",
+    "username": "Username",
+    "email": "E-mail",
+    "password": "Password",
+    "password_confirm": "Password (confirm)",
+    "create_success_title": "Account created",
+    "create_success_message": "After admin check, you can now login with your username and password",
+    "error_title": "Error creating your account",
+    "error_password_not_match": "Password and password confirmation must match",
+    "error_message": "Fail to create your account"
   },
   "passwordlost": {
     "title": "Password lost",
@@ -266,6 +281,7 @@
     }
   },
   "settings": {
+    "menu_registration": "Registration",
     "menu_personal_settings": "Personal settings",
     "menu_user_account": "User account",
     "menu_two_factor_auth": "Two-factor authentication",
