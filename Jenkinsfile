@@ -1,67 +1,36 @@
 pipeline {
     agent any
-
     environment {
-        // Define environment variables
-        // Jenkins credentials configuration
-        DOCKER_HUB_CREDENTIALS = credentials('dockerhub_credentials') // DockerHub credentials ID stored in Jenkins
-        DOCKER_IMAGE = 'iseeyourmonsters/teedy' // Your Docker Hub user name and Repository's name
-        DOCKER_TAG = "${env.BUILD_NUMBER}" // Use build number as tag
+        // 🟡🟡🟡 需填写以下三个变量 🟡🟡🟡
+        DEPLOYMENT_NAME = "teedy-docker-deployment"    // 你的 Kubernetes Deployment 名称
+        CONTAINER_NAME = "teedy-docker-container"      // Deployment 中的容器名称
+        IMAGE_NAME = "iseeyourmonsters/teedy:3"  // 完整的 Docker 镜像地址
     }
-
     stages {
-        stage('Build') {
+        stage('Start Minikube') {
             steps {
-                checkout scmGit(
-                    branches: [[name: '*/master']],
-                    extensions: [],
-                    userRemoteConfigs: [[url: 'https://github.com/Iseeyourmonsters/Teedy.git']]
-                    // Your GitHub Repository
-                )
-                sh 'mvn -B -DskipTests clean package'
+                sh '''
+                    if ! minikube status | grep -q "Running"; then
+                        echo "Starting Minikube..."
+                        minikube start
+                    else
+                        echo "Minikube already running."
+                    fi
+                '''
             }
         }
-
-        // Building Docker images
-        stage('Building Image') {
+        stage('Set Image') {
             steps {
-                script {
-                    // Assume Dockerfile is located at root
-                    docker.build("${env.DOCKER_IMAGE}:${env.DOCKER_TAG}")
-                }
+                sh '''
+                    echo "Setting image for deployment..."
+                    kubectl set image deployment/${DEPLOYMENT_NAME} ${CONTAINER_NAME}=${IMAGE_NAME}
+                '''
             }
         }
-
-        // Uploading Docker images into Docker Hub
-        stage('Upload Image') {
+        stage('Verify') {
             steps {
-                script {
-                    // Sign in to Docker Hub
-                    docker.withRegistry('https://registry.hub.docker.com', 'DOCKER_HUB_CREDENTIALS') {
-                        // Push image
-                        docker.image("${env.DOCKER_IMAGE}:${env.DOCKER_TAG}").push()
-
-                        // Optional: tag as 'latest'
-                        docker.image("${env.DOCKER_IMAGE}:${env.DOCKER_TAG}").push('latest')
-                    }
-                }
-            }
-        }
-
-        // Running Docker container
-        stage('Run Containers') {
-            steps {
-                script {
-                    // Stop then remove containers if they exist
-                    sh 'docker stop teedy-container-8081 || true'
-                    sh 'docker rm teedy-container-8081 || true'
-
-                    // Run Container
-                    docker.image("${env.DOCKER_IMAGE}:${env.DOCKER_TAG}").run('--name teedy-container-8081 -d -p 8081:8080')
-
-                    // Optional: list all teedy-containers
-                    sh 'docker ps --filter "name=teedy-container"'
-                }
+                sh 'kubectl rollout status deployment/${DEPLOYMENT_NAME}'
+                sh 'kubectl get pods'
             }
         }
     }
