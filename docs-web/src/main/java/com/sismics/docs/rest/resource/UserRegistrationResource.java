@@ -226,7 +226,7 @@ public class UserRegistrationResource extends BaseResource {
         try {
             userRegistration.setStatus(Constants.REJECTED_REGISTRATION_STATUS);
             userRegistrationDao.update(userRegistration, id);
-            log.info("User registration approved: " + userRegistration.getUsername());
+            log.info("User registration rejected: " + userRegistration.getUsername());
         } catch (Exception e) {
             throw new ServerException("UnknownError", "Unknown server error", e);
         }
