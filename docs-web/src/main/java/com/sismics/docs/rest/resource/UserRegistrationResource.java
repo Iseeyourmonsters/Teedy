@@ -193,4 +193,47 @@ public class UserRegistrationResource extends BaseResource {
                 .add("status", "ok");
         return Response.ok().entity(response.build()).build();
     }
+
+    /**
+     * Reject a registration.
+     *
+     * @param id ID of the registration to update
+     * @return Response
+     * @api {put} /reject registration
+     * @apiName rejectRegistration
+     * @apiParam {String} id ID
+     * @apiSuccess {String} status Status OK
+     * @apiError (client) ValidationError Validation error
+     * @apiError (server) UnknownError Unknown server error
+     * @apiVersion 1.5.0
+     */
+    @PUT
+    @Path("/rejectRegistration")
+    public Response rejectRegistration(
+            @FormParam("id") String id) {
+        log.debug("inside rejectRegistration, id: " + id);
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        // Update the user registration
+        UserRegistrationDao userRegistrationDao = new UserRegistrationDao();
+        UserRegistration userRegistration = userRegistrationDao.findById(id);
+        if (userRegistration == null) {
+            throw new ClientException("UserRegistrationNotFound", "User registration not found");
+        }
+
+        try {
+            userRegistration.setStatus(Constants.REJECTED_REGISTRATION_STATUS);
+            userRegistrationDao.update(userRegistration, id);
+            log.info("User registration approved: " + userRegistration.getUsername());
+        } catch (Exception e) {
+            throw new ServerException("UnknownError", "Unknown server error", e);
+        }
+
+        // Always return OK
+        JsonObjectBuilder response = Json.createObjectBuilder()
+                .add("status", "ok");
+        return Response.ok().entity(response.build()).build();
+    }
 }

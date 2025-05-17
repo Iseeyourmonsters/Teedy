@@ -51,7 +51,7 @@ angular.module('docs').controller('SettingsRegistration', function($scope, Resta
      * Reject registrations.
      */
     $scope.rejectRequest = function(request) {
-        Restangular.one('registration', request.id).post('reject').then(function() {
+        Restangular.all('userRegistration/rejectRegistration').post({ id: request.id }).then(function() {
             alert('Request rejected successfully!');
             $scope.loadRequests(); // reload user list
         }, function(error) {
