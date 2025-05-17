@@ -1,10 +1,10 @@
 pipeline {
     agent any
     environment {
-        // 🟡🟡🟡 需填写以下三个变量 🟡🟡🟡
-        DEPLOYMENT_NAME = "teedy-docker-deployment"    // 你的 Kubernetes Deployment 名称
-        CONTAINER_NAME = "teedy-docker-container"      // Deployment 中的容器名称
-        IMAGE_NAME = "iseeyourmonsters/teedy:3"  // 完整的 Docker 镜像地址
+    // ✅ 正确填写以下三个变量 ✅
+    DEPLOYMENT_NAME = "hello-node"    // 使用实际存在的 Deployment 名称
+    CONTAINER_NAME = "docs"           // 容器名称从 Deployment 描述中获取
+    IMAGE_NAME = "iseeyourmonsters/teedy:3"  // 你的新镜像地址（确保已推送到仓库）
     }
     stages {
         stage('Start Minikube') {
