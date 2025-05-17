@@ -1,16 +1,16 @@
 <div class="container">
-    <h3>Registration Requests</h3>
+    <h3>{{ 'settings.registration.Registration_requests' | translate }}</h3>
     <div class="alert alert-info" ng-if="requests.length === 0">
-        No pending registration requests.
+        {{ 'settings.registration.No_registration_requests' | translate }}
     </div>
     <table class="table table-bordered table-hover" ng-if="requests.length > 0">
         <thead>
         <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Status</th>
-            <th>Requested Date</th>
-            <th>Actions</th>
+            <th>{{ 'settings.registration.Username' | translate }}</th>
+            <th>{{'settings.registration.Email' | translate}}</th>
+            <th>{{'settings.registration.Status' | translate}}</th>
+            <th>{{'settings.registration.Date' | translate}}</th>
+            <th>{{'settings.registration.Action' | translate}}</th>
         </tr>
         </thead>
         <tbody>
@@ -18,21 +18,21 @@
             <td>{{ request.username }}</td>
             <td>{{ request.email }}</td>
             <td>
-                <span class="label label-warning" ng-if="request.status === 'pending'">Pending</span>
-                <span class="label label-success" ng-if="request.status === 'approved'">Approved</span>
-                <span class="label label-danger" ng-if="request.status === 'rejected'">Rejected</span>
+                <span class="label label-warning" ng-if="request.status === 'pending'">{{'settings.registration.Pending' | translate}}</span>
+                <span class="label label-success" ng-if="request.status === 'approved'">{{'settings.registration.Approved' | translate}}</span>
+                <span class="label label-danger" ng-if="request.status === 'rejected'">{{'settings.registration.Rejected' | translate}}</span>
             </td>
             <td>{{ request.registration_date | date:'medium' }}</td>
             <td>
                 <button class="btn btn-success btn-sm"
                         ng-click="approveRequest(request)"
                         ng-disabled="request.status !== 'pending'">
-                    Approve
+                    {{'settings.registration.Approve' | translate}}
                 </button>
                 <button class="btn btn-danger btn-sm"
                         ng-click="rejectRequest(request)"
                         ng-disabled="request.status !== 'pending'">
-                    Reject
+                    {{'settings.registration.Reject' | translate}}
                 </button>
             </td>
         </tr>

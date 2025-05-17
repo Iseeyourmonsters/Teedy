@@ -1,34 +1,34 @@
 <div class="modal-header">
-    <h3 class="modal-title">Register</h3>
+    <h3 class="modal-title">{{'register.title' | translate}}</h3>
 </div>
 <div class="modal-body">
     <form name="registerForm" novalidate>
         <div class="form-group">
-            <label class="sr-only" for="inputUsername">Username</label>
+            <label class="sr-only" for="inputUsername">{{'register.username' | translate}}</label>
             <input class="form-control" type="text" id="inputUsername" name="username"
-                   ng-attr-placeholder="Username" ng-model="register.username" required />
+                   ng-attr-placeholder="{{'register.username' | translate}}" ng-model="register.username" required />
         </div>
 
         <div class="form-group">
-            <label class="sr-only" for="inputEmail">Email</label>
+            <label class="sr-only" for="inputEmail">{{'register.email' | translate}}</label>
             <input class="form-control" type="email" id="inputEmail" name="email"
-                   ng-attr-placeholder="Email" ng-model="register.email" required />
+                   ng-attr-placeholder="{{'register.email' | translate}}" ng-model="register.email" required />
         </div>
 
         <div class="form-group">
-            <label class="sr-only" for="inputPassword">Password</label>
+            <label class="sr-only" for="inputPassword">{{'register.password' | translate}}</label>
             <input class="form-control" type="password" id="inputPassword" name="password"
-                   ng-attr-placeholder="Password" ng-model="register.password" required />
+                   ng-attr-placeholder="{{'register.password' | translate}}" ng-model="register.password" required />
         </div>
 
         <div class="form-group">
-            <label class="sr-only" for="inputConfirmPassword">Confirm Password</label>
+            <label class="sr-only" for="inputConfirmPassword">{{'register.password_confirm' | translate}}</label>
             <input class="form-control" type="password" id="inputConfirmPassword" name="confirmPassword"
-                   ng-attr-placeholder="Confirm Password" ng-model="register.confirmPassword" required />
+                   ng-attr-placeholder="{{'register.password_confirm' | translate}}"  ng-model="register.confirmPassword" required />
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="register(register.password, register.confirmPassword, register.username, register.email)">Register</button>
-            <button class="btn btn-default" ng-click="close()">Cancel</button>
+            <button class="btn btn-primary" ng-click="register(register.password, register.confirmPassword, register.username, register.email)">{{'register.title' | translate}}</button>
+            <button class="btn btn-default" ng-click="close()">{{'register.cancel' | translate}}</button>
         </div>
     </form>
 </div>
