@@ -29,7 +29,8 @@
     "create_success_message": "After admin check, you can now login with your username and password",
     "error_title": "Error creating your account",
     "error_password_not_match": "Password and password confirmation must match",
-    "error_message": "Fail to create your account"
+    "error_message": "Fail to create your account",
+    "cancel": "Cancel"
   },
   "passwordlost": {
     "title": "Password lost",
@@ -341,6 +342,20 @@
         "disable_totp_title": "Disable two-factor authentication",
         "disable_totp_message": "Are you sure you want to disable two-factor authentication for this user?"
       }
+    },
+    "registration": {
+      "Registration_requests": "Registration requests",
+      "No_registration_requests": "No registration requests",
+      "Username": "Username",
+      "Email": "Email",
+      "Status": "Status",
+      "Date": "Date",
+      "Action": "Action",
+      "Pending": "Pending",
+      "Approved": "Approved",
+      "Rejected": "Rejected",
+      "Approve": "Approve",
+      "Reject": "Reject"
     },
     "workflow": {
       "title": "Workflow configuration",

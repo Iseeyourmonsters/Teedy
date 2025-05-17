@@ -61,19 +61,23 @@
           </div>
 
           <div class="row">
+            <!-- 登录按钮保持左对齐 -->
             <div class="col-md-6">
               <button type="submit" class="btn btn-primary" ng-click="login()">
                 <span class="fas fa-check"></span> {{ 'login.submit' | translate }}
               </button>
             </div>
-            <!-- Add the register button -->
-            <div class="col-md-6 text-center">
-              <button type="button" class="btn btn-secondary" ng-click="openRegister()">
-                <span class="fas fa-user-plus"></span> {{ 'login.register' | translate }}
-              </button>
-            </div>
-            <div class="col-md-6 text-right btn-password-lost">
-              <div class="well-sm">
+
+            <!-- 注册按钮和密码链接右对齐 -->
+            <div class="col-md-6 text-right"> <!-- 重点修改处 -->
+              <div class="d-block mb-2"> <!-- 注册按钮容器 -->
+                <button type="button" class="btn btn-secondary" ng-click="openRegister()">
+                  <span class="fas fa-user-plus"></span> {{ 'login.register' | translate }}
+                </button>
+              </div>
+
+              <!-- 密码丢失链接 -->
+              <div class="btn-password-lost">
                 <a href ng-click="openPasswordLost()">{{ 'login.password_lost_btn' | translate }}</a>
               </div>
             </div>

@@ -29,7 +29,8 @@
     "create_success_message": "管理员审核后将激活您的帐号",
     "error_title": "注册出错",
     "error_password_not_match": "密码和确认密码不匹配",
-    "error_message": "创建帐号失败，请联系管理员"
+    "error_message": "创建帐号失败，请联系管理员",
+    "cancel": "取消"
   },
   "passwordlost": {
     "title": "丢失密码",
@@ -288,6 +289,20 @@
         "password_lost_sent_title": "密码重置邮件已发送",
         "password_lost_sent_message": "密码重置电子邮件已发送至 <strong>{{ username }}</strong>"
       }
+    },
+    "registration": {
+      "Registration_requests": "注册请求",
+      "No_registration_requests": "暂无注册请求",
+      "Username": "用户名",
+      "Email": "邮箱",
+      "Status": "状态",
+      "Date": "日期",
+      "Action": "操作",
+      "Pending": "待处理",
+      "Approved": "同意",
+      "Rejected": "拒绝",
+      "Approve": "同意",
+      "Reject": "拒绝"
     },
     "workflow": {
       "title": "工作流程<small>配置</small>",
