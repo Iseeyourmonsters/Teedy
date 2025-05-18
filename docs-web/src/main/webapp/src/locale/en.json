@@ -1,4 +1,10 @@
 {
+  "chart": {
+    "upload_stats": "Upload status",
+    "by_type": "By File Type",
+    "by_user": "By User",
+    "close": "Close"
+  },
   "login": {
     "username": "Username",
     "password": "Password",

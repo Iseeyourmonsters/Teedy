@@ -1,0 +1,36 @@
+<!-- 在页面头部添加Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- 添加样式 -->
+<style>
+    .modal-body .row {
+        min-height: 400px;
+    }
+    canvas {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+    .fa-chart-pie {
+        font-size: 0.8em;
+    }
+</style>
+
+<div class="modal-header">
+    <h3 class="modal-title">{{ 'chart.upload_stats' | translate }}</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6">
+            <h5 class="text-center">{{ 'chart.by_type' | translate }}</h5>
+            <canvas id="typeChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h5 class="text-center">{{ 'chart.by_user' | translate }}</h5>
+            <canvas id="userChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-click="close()">{{ 'chart.close' | translate }}</button>
+</div>

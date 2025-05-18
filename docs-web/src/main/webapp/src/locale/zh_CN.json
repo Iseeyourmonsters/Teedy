@@ -1,4 +1,10 @@
 {
+  "chart": {
+    "upload_stats": "上传状态",
+    "by_type": "按文件类型分类",
+    "by_user": "按用户分类",
+    "close": "关闭"
+  },
   "login": {
     "username": "用户名",
     "password": "密码",
