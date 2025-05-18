@@ -290,6 +290,15 @@ angular.module('docs',
         }
       }
     })
+    .state('statsModal', {
+      url: '/auditlog',
+      views: {
+        'page': {
+          templateUrl: 'partial/docs/statsModal.html',
+          controller: 'StatsModalCtrl'
+        }
+      }
+    })
     .state('document.default.search', {
       url: '/search/:search'
     })
