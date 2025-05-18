@@ -9,6 +9,15 @@ angular.module('docs').controller('DocumentDefault', function ($scope, $rootScop
     $scope.logs = data.logs;
   });
 
+  // draw pie chart
+  $scope.showChartModal = function() {
+    $uibModal.open({
+      templateUrl: 'partial/docs/statsModal.html',
+      controller: 'StatsModalCtrl',
+      size: 'lg'
+    });
+  };
+
   // Load unlinked files
   $scope.loadFiles = function () {
     Restangular.one('file/list').get().then(function (data) {
