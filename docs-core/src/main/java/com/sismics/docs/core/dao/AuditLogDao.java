@@ -98,4 +98,36 @@ public class AuditLogDao {
 
         paginatedList.setResultList(auditLogDtoList);
     }
+
+    public List<Object[]> countUploadsByType() {
+        EntityManager em = ThreadLocalContext.get().getEntityManager();
+        String sql = "SELECT l.LOG_CLASSENTITY_C, COUNT(l.LOG_ID_C) " +
+                "FROM T_AUDIT_LOG l " +
+                "WHERE l.LOG_TYPE_C = 'CREATE' and l.LOG_CLASSENTITY_C != 'Acl'" +
+                "GROUP BY l.LOG_CLASSENTITY_C";
+        List<Object[]> result = em.createNativeQuery(sql).getResultList();
+        System.out.println("查询结果数量: " + result.size());
+        for (Object[] row : result) {
+            System.out.println("类型: " + row[0] + ", 次数: " + row[1]);
+        }
+
+        return result;
+    }
+
+
+    public List<Object[]> countUploadsByUser() {
+        EntityManager em = ThreadLocalContext.get().getEntityManager();
+        String sql = "SELECT u.USE_USERNAME_C, COUNT(l.LOG_ID_C) " +
+                "FROM T_AUDIT_LOG l " +
+                "JOIN T_USER u ON l.LOG_IDUSER_C = u.USE_ID_C " +
+                "WHERE l.LOG_TYPE_C = 'CREATE' and l.LOG_CLASSENTITY_C != 'Acl'" +
+                "GROUP BY u.USE_USERNAME_C";
+        List<Object[]> result = em.createNativeQuery(sql).getResultList();
+        System.out.println("查询结果数量: " + result.size());
+        for (Object[] row : result) {
+            System.out.println("用户: " + row[0] + ", 次数: " + row[1]);
+        }
+
+        return result;
+    }
 }

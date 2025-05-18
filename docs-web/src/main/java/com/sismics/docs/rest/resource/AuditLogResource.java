@@ -99,4 +99,51 @@ public class AuditLogResource extends BaseResource {
                 .add("total", paginatedList.getResultCount());
         return Response.ok().entity(response.build()).build();
     }
+
+    @GET
+    @Path("/uploadStats")
+    public Response getUploadStats() {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        AuditLogDao auditLogDao = new AuditLogDao();
+        var results = auditLogDao.countUploadsByType();  // 返回 List<Object[]>，每项是 [logClass, count]
+
+        JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+        System.out.println();
+        System.out.println("getUploadStats called");
+        for (Object[] row : results) {
+            arrayBuilder.add(Json.createObjectBuilder()
+                    .add("type", (String) row[0])
+                    .add("count", ((Number) row[1]).intValue()));
+            System.out.println(row[0] + " " + row[1]);
+        }
+
+
+        return Response.ok(arrayBuilder.build()).build();
+    }
+
+    @GET
+    @Path("/userUploadCount")
+    public Response getUserUploadCount() {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        AuditLogDao auditLogDao = new AuditLogDao();
+        var results = auditLogDao.countUploadsByUser();  // 返回 List<Object[]>，每项是 [username, count]
+
+        JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+        System.out.println();
+        System.out.println("getUserUploadCount called");
+        for (Object[] row : results) {
+            arrayBuilder.add(Json.createObjectBuilder()
+                    .add("username", (String) row[0])
+                    .add("count", ((Number) row[1]).intValue()));
+            System.out.println(row[0] + " " + row[1]);
+        }
+
+        return Response.ok(arrayBuilder.build()).build();
+    }
 }
