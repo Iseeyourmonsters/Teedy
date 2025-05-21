@@ -109,6 +109,7 @@ public class AuditLogDao {
                 "MAX(l.LOG_CREATEDATE_D) as last_upload " +
                 "FROM T_AUDIT_LOG l " +
                 "WHERE l.LOG_TYPE_C = 'CREATE' and l.LOG_CLASSENTITY_C != 'Acl' " +
+                "AND l.LOG_CLASSENTITY_C NOT IN ('User', 'UserRegistration') " +
                 "GROUP BY l.LOG_CLASSENTITY_C " +
                 "ORDER BY total_count DESC";
         

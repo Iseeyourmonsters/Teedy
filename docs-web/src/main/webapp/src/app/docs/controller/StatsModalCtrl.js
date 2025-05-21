@@ -54,6 +54,8 @@ angular.module('docs').controller('StatsModalCtrl', function ($scope, $uibModalI
 
     // 初始化类型饼图
     $scope.initTypeChart = function (data) {
+        // 过滤掉User和UserRegistration类型
+        data = data.filter(item => item.type !== 'User' && item.type !== 'UserRegistration');
         const ctx = document.getElementById('typeChart').getContext('2d');
         const labels = data.map(item => item.type);
         const counts = data.map(item => item.total_count);
