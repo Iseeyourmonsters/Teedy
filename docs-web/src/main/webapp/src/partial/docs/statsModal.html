@@ -1,5 +1,6 @@
 <!-- 在页面头部添加Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
 
 <!-- 添加样式 -->
 <style>
@@ -14,12 +15,56 @@
     .fa-chart-pie {
         font-size: 0.8em;
     }
+    .stats-card {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+    .stats-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    .stats-label {
+        color: #7f8c8d;
+        font-size: 14px;
+    }
 </style>
 
 <div class="modal-header">
     <h3 class="modal-title">{{ 'chart.upload_stats' | translate }}</h3>
 </div>
 <div class="modal-body">
+    <!-- 统计卡片 -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{totalUploads}}</div>
+                <div class="stats-label">{{ 'chart.total_uploads' | translate }}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{uniqueUsers}}</div>
+                <div class="stats-label">{{ 'chart.unique_users' | translate }}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{totalActivities}}</div>
+                <div class="stats-label">{{ 'chart.total_activities' | translate }}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{activeUsers}}</div>
+                <div class="stats-label">{{ 'chart.active_users' | translate }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图表区域 -->
     <div class="row">
         <div class="col-md-6">
             <h5 class="text-center">{{ 'chart.by_type' | translate }}</h5>
@@ -28,6 +73,26 @@
         <div class="col-md-6">
             <h5 class="text-center">{{ 'chart.by_user' | translate }}</h5>
             <canvas id="userChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <!-- 文件类型统计 -->
+    <div class="row">
+        <div class="col-md-6">
+            <h5 class="text-center">{{ 'chart.by_file_type' | translate }}</h5>
+            <canvas id="fileTypeChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6">
+            <h5 class="text-center">{{ 'chart.by_file_size' | translate }}</h5>
+            <canvas id="fileSizeChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <!-- 甘特图区域 -->
+    <div class="row">
+        <div class="col-md-12">
+            <h5 class="text-center">{{ 'chart.activity_timeline' | translate }}</h5>
+            <canvas id="timelineChart" width="800" height="300"></canvas>
         </div>
     </div>
 </div>
