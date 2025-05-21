@@ -22,6 +22,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
 
+import java.sql.Timestamp;
+
 /**
  * Audit log REST resources.
  * 
@@ -108,18 +110,66 @@ public class AuditLogResource extends BaseResource {
         }
 
         AuditLogDao auditLogDao = new AuditLogDao();
-        var results = auditLogDao.countUploadsByType();  // 返回 List<Object[]>，每项是 [logClass, count]
+        var results = auditLogDao.countUploadsByType();
 
         JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
-        System.out.println();
-        System.out.println("getUploadStats called");
         for (Object[] row : results) {
             arrayBuilder.add(Json.createObjectBuilder()
                     .add("type", (String) row[0])
-                    .add("count", ((Number) row[1]).intValue()));
-            System.out.println(row[0] + " " + row[1]);
+                    .add("total_count", ((Number) row[1]).intValue())
+                    .add("unique_users", ((Number) row[2]).intValue())
+                    .add("first_upload", ((Timestamp) row[3]).getTime())
+                    .add("last_upload", ((Timestamp) row[4]).getTime()));
         }
 
+        return Response.ok(arrayBuilder.build()).build();
+    }
+
+    @GET
+    @Path("/activityTimeline")
+    public Response getActivityTimeline() {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        AuditLogDao auditLogDao = new AuditLogDao();
+        var results = auditLogDao.getActivityTimeline();
+
+        JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+        for (Object[] row : results) {
+            arrayBuilder.add(Json.createObjectBuilder()
+                    .add("user_id", (String) row[0])
+                    .add("username", (String) row[1])
+                    .add("entity_type", (String) row[2])
+                    .add("activity_type", (String) row[3])
+                    .add("timestamp", ((Timestamp) row[4]).getTime())
+                    .add("message", JsonUtil.nullable((String) row[5])));
+        }
+
+        return Response.ok(arrayBuilder.build()).build();
+    }
+
+    @GET
+    @Path("/userActivityStats")
+    public Response getUserActivityStats() {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        AuditLogDao auditLogDao = new AuditLogDao();
+        var results = auditLogDao.getUserActivityStats();
+
+        JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+        for (Object[] row : results) {
+            arrayBuilder.add(Json.createObjectBuilder()
+                    .add("username", (String) row[0])
+                    .add("total_activities", ((Number) row[1]).intValue())
+                    .add("creations", ((Number) row[2]).intValue())
+                    .add("updates", ((Number) row[3]).intValue())
+                    .add("deletions", ((Number) row[4]).intValue())
+                    .add("first_activity", ((Timestamp) row[5]).getTime())
+                    .add("last_activity", ((Timestamp) row[6]).getTime()));
+        }
 
         return Response.ok(arrayBuilder.build()).build();
     }
@@ -142,6 +192,27 @@ public class AuditLogResource extends BaseResource {
                     .add("username", (String) row[0])
                     .add("count", ((Number) row[1]).intValue()));
             System.out.println(row[0] + " " + row[1]);
+        }
+
+        return Response.ok(arrayBuilder.build()).build();
+    }
+
+    @GET
+    @Path("/fileTypeStats")
+    public Response getFileTypeStats() {
+        if (!authenticate()) {
+            throw new ForbiddenClientException();
+        }
+
+        AuditLogDao auditLogDao = new AuditLogDao();
+        var results = auditLogDao.getFileTypeStats();
+
+        JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+        for (Object[] row : results) {
+            arrayBuilder.add(Json.createObjectBuilder()
+                    .add("type", (String) row[0])
+                    .add("count", ((Number) row[1]).intValue())
+                    .add("total_size", ((Number) row[2]).longValue()));
         }
 
         return Response.ok(arrayBuilder.build()).build();

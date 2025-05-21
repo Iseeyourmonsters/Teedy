@@ -1,10 +1,13 @@
-<!-- 在页面头部添加Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- 在页面头部添加依赖 -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/date-fns@2.30.0/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.1/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 
 <!-- 添加样式 -->
 <style>
     .modal-body .row {
-        min-height: 400px;
+        min-height: 120px;
     }
     canvas {
         max-width: 100%;
@@ -14,23 +17,102 @@
     .fa-chart-pie {
         font-size: 0.8em;
     }
+    .stats-card {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+    .stats-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    .stats-label {
+        color: #7f8c8d;
+        font-size: 14px;
+    }
 </style>
 
 <div class="modal-header">
     <h3 class="modal-title">{{ 'chart.upload_stats' | translate }}</h3>
 </div>
 <div class="modal-body">
+    <!-- 统计卡片 -->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{totalUploads}}</div>
+                <div class="stats-label">{{ 'chart.total_uploads' | translate }}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{uniqueUsers}}</div>
+                <div class="stats-label">{{ 'chart.unique_users' | translate }}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{totalActivities}}</div>
+                <div class="stats-label">{{ 'chart.total_activities' | translate }}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stats-card">
+                <div class="stats-value">{{activeUsers}}</div>
+                <div class="stats-label">{{ 'chart.active_users' | translate }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图表区域 -->
     <div class="row">
         <div class="col-md-6">
-            <h5 class="text-center">{{ 'chart.by_type' | translate }}</h5>
             <canvas id="typeChart" width="400" height="400"></canvas>
         </div>
         <div class="col-md-6">
-            <h5 class="text-center">{{ 'chart.by_user' | translate }}</h5>
             <canvas id="userChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <!-- 文件类型统计 -->
+    <div class="row">
+        <div class="col-md-6">
+            <canvas id="fileTypeChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="fileSizeChart" width="400" height="400"></canvas>
         </div>
     </div>
 </div>
 <div class="modal-footer">
     <button class="btn btn-default" ng-click="close()">{{ 'chart.close' | translate }}</button>
 </div>
+
+<!-- 在页面底部加载依赖 -->
+<script>
+    // 动态加载依赖
+    function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.body.appendChild(script);
+        });
+    }
+
+    // 加载所有依赖
+    Promise.all([
+        loadScript('https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js'),
+        loadScript('https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js'),
+        loadScript('https://cdn.jsdelivr.net/npm/date-fns@2.30.0/index.min.js'),
+        loadScript('https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.1/dist/chartjs-adapter-date-fns.bundle.min.js')
+    ]).then(() => {
+        // 所有依赖加载完成后，触发一个自定义事件
+        document.dispatchEvent(new Event('dependenciesLoaded'));
+    }).catch(error => {
+        console.error('Error loading dependencies:', error);
+    });
+</script>

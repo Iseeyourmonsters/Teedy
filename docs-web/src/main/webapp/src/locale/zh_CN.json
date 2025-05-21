@@ -1,9 +1,18 @@
 {
   "chart": {
     "upload_stats": "上传状态",
-    "by_type": "按文件类型分类",
-    "by_user": "按用户分类",
-    "close": "关闭"
+    "by_type": "用户活动类型",
+    "by_user": "用户活动数量",
+    "by_file_type": "按文件类型分类",
+    "by_file_size": "按文件大小分类",
+    "activity_timeline": "活动时间线",
+    "total_uploads": "上传总数",
+    "unique_users": "独立用户数",
+    "total_activities": "活动总数",
+    "active_users": "活跃用户数",
+    "close": "关闭",
+    "user": "用户",
+    "time": "时间"
   },
   "login": {
     "username": "用户名",
