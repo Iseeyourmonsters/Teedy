@@ -10,7 +10,9 @@
     "unique_users": "独立用户数",
     "total_activities": "活动总数",
     "active_users": "活跃用户数",
-    "close": "关闭"
+    "close": "关闭",
+    "user": "用户",
+    "time": "时间"
   },
   "login": {
     "username": "用户名",

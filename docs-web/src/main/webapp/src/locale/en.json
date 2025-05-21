@@ -10,7 +10,9 @@
     "unique_users": "Unique Users",
     "total_activities": "Total Activities",
     "active_users": "Active Users",
-    "close": "Close"
+    "close": "Close",
+    "user": "User",
+    "time": "Time"
   },
   "login": {
     "username": "Username",

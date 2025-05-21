@@ -5,7 +5,7 @@
  */
 angular.module('docs').controller('StatsModalCtrl', function ($scope, $uibModalInstance, Restangular, $translate, $dialog) {
     let typeChart, userChart, timelineChart, fileTypeChart, fileSizeChart;
-    
+
     // 初始化统计数据
     $scope.totalUploads = 0;
     $scope.uniqueUsers = 0;
@@ -131,7 +131,7 @@ angular.module('docs').controller('StatsModalCtrl', function ($scope, $uibModalI
     // 初始化时间线图表
     $scope.initTimelineChart = function (data) {
         const ctx = document.getElementById('timelineChart').getContext('2d');
-        
+
         // 处理数据
         const activities = data.map(item => ({
             x: new Date(item.timestamp),
@@ -193,6 +193,10 @@ angular.module('docs').controller('StatsModalCtrl', function ($scope, $uibModalI
                                 ];
                             }
                         }
+                    },
+                    title: {
+                        display: true,
+                        text: $translate.instant('chart.activity_timeline')
                     }
                 }
             }
